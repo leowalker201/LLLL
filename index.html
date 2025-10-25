@@ -1,10 +1,12 @@
 <!--
 SITE SIMPLES PARA "LALA EXCURSÕES"
-Dicas:
-1. Pra trocar textos, edite o que está entre as tags <p>, <h1>, etc.
-2. Pra trocar fotos, mude o link dentro de src="..." por outro (pode ser link do Instagram, Imgur ou do seu próprio site).
-3. Pra adicionar novas viagens, copie um <div class="card"> inteiro e cole logo abaixo do outro.
-4. Pra mudar o link do WhatsApp ou Instagram, altere no final do arquivo, onde estão os botões.
+Feito pra ser fácil de editar.
+DICAS GERAIS:
+🟢 Para trocar textos → Edite o que está entre as tags <p>, <h1>, <h2> etc.
+🟢 Para trocar fotos → Mude o link dentro de src="..."
+🟢 Para adicionar viagens → Copie um bloco <div class="card"> e cole logo abaixo.
+🟢 Para mudar links do WhatsApp ou Instagram → Vá até o rodapé (footer).
+🟢 Para trocar a logo → Troque o link dentro da tag <img id="logo"> abaixo.
 -->
 
 <!DOCTYPE html>
@@ -25,11 +27,18 @@ Dicas:
       background-color: #00a86b;
       color: white;
       text-align: center;
-      padding: 20px 10px;
+      padding: 10px 10px 25px 10px;
+    }
+
+    #logo {
+      width: 120px; /* Dica: altere o tamanho se quiser maior/menor */
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      margin: 0;
+      margin: 5px 0 0 0;
     }
 
     main {
@@ -97,34 +106,50 @@ Dicas:
 <body>
 
   <header>
+    <!-- 🔷 DICA: TROQUE O LINK ABAIXO PELA SUA LOGO -->
+    <!-- Pode ser link direto tipo https://imagemaqui.com/sualogo.png -->
+    <img id="logo" src="https://imgur.com/a/bwXjbiX" alt="Logo Lala Excursões">
+
+    <!-- 🔷 DICA: TROQUE O NOME E O SLOGAN ABAIXO -->
     <h1>🌴 Lala Excursões 🌊</h1>
     <p>Viagens, diversão e boas memórias!</p>
   </header>
 
   <main>
-    <!-- Exemplo de viagem -->
+    <!-- 🔷 EXEMPLO DE UMA VIAGEM (COPIE ESTE BLOCO PARA ADICIONAR OUTRAS) -->
     <div class="card">
+      <!-- Troque o link da imagem -->
       <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Lagoa_do_Carcar%C3%A1_-_Rio_Grande_do_Norte.jpg" alt="Lagoa do Carcará">
+
+      <!-- Troque o nome da viagem -->
       <h2>Lagoa do Carcará</h2>
+
+      <!-- Troque a descrição -->
       <p>Passe um dia incrível nesse paraíso natural. Incluso transporte, almoço e fotos do passeio!</p>
     </div>
 
-    <!-- Adicione mais blocos de viagem abaixo copiando o modelo acima -->
+    <!-- 🔷 OUTRO EXEMPLO DE VIAGEM -->
     <div class="card">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Pipa_Beach.jpg" alt="Praia de Pipa">
       <h2>Praia de Pipa</h2>
       <p>Um dos destinos mais lindos do Nordeste. Aproveite um bate e volta cheio de energia!</p>
     </div>
+
+    <!-- 🔷 PARA ADICIONAR MAIS VIAGENS:
+         Copie e cole o bloco <div class="card">...</div> aqui embaixo,
+         depois troque o título, imagem e texto.
+    -->
   </main>
 
   <footer>
     <p>Entre em contato:</p>
     <div class="social-buttons">
-      <!-- Coloque seu link do WhatsApp (com DDI 55 e DDD) -->
-      <a href="https://wa.me/5599999999999" target="_blank">📱 WhatsApp</a>
+      <!-- 🔷 DICA: TROQUE PELO SEU LINK DE WHATSAPP -->
+      <!-- Use o formato: https://wa.me/+5581984570287 (ex: https://wa.me/5581984570287) -->
+      <a href="https://wa.me/81984570287" target="_blank">📱 WhatsApp</a>
 
-      <!-- Coloque o link do seu Instagram -->
-      <a href="https://instagram.com/seuinstagram" target="_blank">📸 Instagram</a>
+      <!-- 🔷 DICA: TROQUE PELO SEU INSTAGRAM -->
+      <a href="https://instagram.com/lala_excursoes" target="_blank">📸 Instagram</a>
     </div>
     <p>© 2025 Lala Excursões - Todos os direitos reservados</p>
   </footer>
