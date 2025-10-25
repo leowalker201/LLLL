@@ -6,60 +6,49 @@
   <title>Lala Excursões</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
       text-align: center;
     }
-
     header {
-      background-color: #ffe082;
-      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 10px;
     }
-
     header img {
-      max-width: 180px;
+      width: 180px;
       border-radius: 10px;
     }
-
-    h1 {
-      color: #444;
-    }
-
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 10px;
       padding: 20px;
     }
-
     .galeria img {
       width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
-
-    .galeria img:hover {
-      transform: scale(1.03);
-    }
-
     footer {
-      background-color: #ffe082;
+      background-color: #fff;
       padding: 20px;
-      font-size: 18px;
+      border-top: 1px solid #ddd;
     }
-
     footer a {
-      margin: 0 10px;
-      color: #000;
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #25d366;
+      color: white;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
-
-    footer a:hover {
-      text-decoration: underline;
+    footer a.instagram {
+      background-color: #e1306c;
     }
   </style>
 </head>
@@ -67,26 +56,26 @@
 
   <header>
     <img src="logo.jpg" alt="Logo Lala Excursões">
-    <h1>Lala Excursões</h1>
-    <p>Viagens inesquecíveis com conforto e segurança</p>
   </header>
 
-  <section class="galeria">
-    <img src="imagem1.jpg" alt="Excursão 1">
-    <img src="imagem2.jpg" alt="Excursão 2">
-    <img src="imagem3.jpg" alt="Excursão 3">
-    <img src="imagem4.jpg" alt="Excursão 4">
-    <img src="imagem5.jpg" alt="Excursão 5">
-    <img src="imagem6.jpg" alt="Excursão 6">
-    <img src="imagem7.jpg" alt="Excursão 7">
-    <img src="imagem8.jpg" alt="Excursão 8">
-    <img src="imagem9.jpg" alt="Excursão 9">
-    <img src="imagem10.jpg" alt="Excursão 10">
-  </section>
+  <main>
+    <div class="galeria">
+      <img src="imagem1.jpg" alt="Imagem 1">
+      <img src="imagem2.jpg" alt="Imagem 2">
+      <img src="imagem3.jpg" alt="Imagem 3">
+      <img src="imagem4.jpg" alt="Imagem 4">
+      <img src="imagem5.jpg" alt="Imagem 5">
+      <img src="imagem6.jpg" alt="Imagem 6">
+      <img src="imagem7.jpg" alt="Imagem 7">
+      <img src="imagem8.jpg" alt="Imagem 8">
+      <img src="imagem9.jpg" alt="Imagem 9">
+      <img src="imagem10.jpg" alt="Imagem 10">
+    </div>
+  </main>
 
   <footer>
-    <a href="https://wa.me/5581984570287" target="_blank">WhatsApp</a> |
-    <a href="https://instagram.com/lala_excursoes" target="_blank">Instagram</a>
+    <a href="https://wa.me/5581984570287" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/lala_excursoes" target="_blank" class="instagram">Instagram</a>
   </footer>
 
 </body>
