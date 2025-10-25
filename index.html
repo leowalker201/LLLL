@@ -6,7 +6,7 @@ DICAS GERAIS:
 🟢 Para trocar fotos → Mude o link dentro de src="..."
 🟢 Para adicionar viagens → Copie um bloco <div class="card"> e cole logo abaixo.
 🟢 Para mudar links do WhatsApp ou Instagram → Vá até o rodapé (footer).
-🟢 Para trocar a logo → Troque o link dentro da tag <img id="logo"> abaixo.
+🟢 Para trocar a logo → Troque o link dentro de src="..." na imagem #logo.
 -->
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ DICAS GERAIS:
     }
 
     #logo {
-      width: 120px; /* Dica: altere o tamanho se quiser maior/menor */
+      width: 140px; /* 🔷 Ajuste o tamanho da logo se quiser maior/menor */
       height: auto;
       border-radius: 10px;
       margin-bottom: 10px;
@@ -106,11 +106,10 @@ DICAS GERAIS:
 <body>
 
   <header>
-    <!-- 🔷 DICA: TROQUE O LINK ABAIXO PELA SUA LOGO -->
-    <!-- Pode ser link direto tipo https://imagemaqui.com/sualogo.png -->
-    <img id="logo" src="Screenshot_20251019_144415_Photos.jpg" alt="Logo Lala Excursões">
+    <!-- 🔷 SUA LOGO -->
+    <!-- Troque o link abaixo caso mude a imagem da logo -->
+    <img id="logo" src="https://i.imgur.com/bwXjbiX.jpeg" alt="Logo Lala Excursões">
 
-    <!-- 🔷 DICA: TROQUE O NOME E O SLOGAN ABAIXO -->
     <h1>🌴 Lala Excursões 🌊</h1>
     <p>Viagens, diversão e boas memórias!</p>
   </header>
@@ -144,12 +143,11 @@ DICAS GERAIS:
   <footer>
     <p>Entre em contato:</p>
     <div class="social-buttons">
-      <!-- 🔷 DICA: TROQUE PELO SEU LINK DE WHATSAPP -->
-      <!-- Use o formato: https://wa.me/+5581984570287 (ex: https://wa.me/5581984570287) -->
-      <a href="https://wa.me/81984570287" target="_blank">📱 WhatsApp</a>
+      <!-- 🔷 WHATSAPP -->
+      <a href="https://wa.me/5581984570287" target="_blank">📱 WhatsApp</a>
 
-      <!-- 🔷 DICA: TROQUE PELO SEU INSTAGRAM -->
-      <a href="https://instagram.com/lala_excursoes" target="_blank">📸 Instagram</a>
+      <!-- 🔷 INSTAGRAM -->
+      <a href="https://instagram.com/seuinstagram" target="_blank">📸 Instagram</a>
     </div>
     <p>© 2025 Lala Excursões - Todos os direitos reservados</p>
   </footer>
