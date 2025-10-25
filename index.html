@@ -1,210 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Lala Excursões - Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lala Excursões</title>
   <style>
-    /* ---------- RESET simples ---------- */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
-         color:#222;background:#f4f4f4;line-height:1.3}
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-    /* ---------- cabeçalho ---------- */
-    .topbar{display:flex;align-items:center;gap:14px;padding:18px 16px;background:#fff;position:sticky;top:0;z-index:50;box-shadow:0 1px 6px rgba(0,0,0,.06)}
-    .logo{width:56px;height:56px;border-radius:50%;overflow:hidden;flex:0 0 56px;border:2px solid #e6e6e6}
-    .logo img{width:100%;height:100%;object-fit:cover}
-    .site-title{font-weight:700;font-size:20px}
-    .site-sub{font-size:13px;color:#666}
-    .top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+    header {
+      background-color: #ffe082;
+      padding: 20px;
+    }
 
-    /* botões sociais */
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;color:#fff;font-weight:600;text-decoration:none}
-    .btn-wh{background:#25D366} /* verde whatsapp */
-    .btn-ig{background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)} /* gradiente insta */
-    .btn svg{width:18px;height:18px;flex-shrink:0}
+    header img {
+      max-width: 180px;
+      border-radius: 10px;
+    }
 
-    /* ---------- hero/banner ---------- */
-    .hero{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;padding:36px 16px;background:#111;color:#fff}
-    .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.45)}
-    .hero .content{position:relative;z-index:2;max-width:900px}
-    .hero h1{font-size:48px;line-height:1.05;margin-bottom:10px}
-    .hero p{font-size:16px;color:rgba(255,255,255,.9);margin-bottom:18px}
-    .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:8px;background:#f2b01e;color:#111;font-weight:700;text-decoration:none}
+    h1 {
+      color: #444;
+    }
 
-    /* ---------- seção pacotes ---------- */
-    .section{padding:36px 16px;background:#f4f4f4}
-    .container{max-width:1000px;margin:0 auto}
-    .section h2{text-align:center;font-size:32px;margin-bottom:6px}
-    .section p.lead{text-align:center;color:#666;margin-bottom:24px}
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
 
-    .cards{display:grid;grid-template-columns:repeat(1,1fr);gap:18px}
-    @media(min-width:760px){ .cards{grid-template-columns:repeat(2,1fr)} }
-    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .card .thumb{height:180px;background-size:cover;background-position:center}
-    .card .body{padding:16px}
-    .card h3{font-size:20px;margin-bottom:6px}
-    .card p{color:#555;margin-bottom:12px}
-    .list{list-style:none;padding-left:0;color:#444}
-    .list li{padding:6px 0;border-bottom:1px dashed #eee;font-size:14px}
-    .card .btn-row{display:flex;gap:10px;margin-top:12px}
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
 
-    .btn-outline{padding:10px 12px;border-radius:8px;border:1px solid #ddd;text-decoration:none;color:#333;font-weight:600;background:#fff;display:inline-block}
+    .galeria img:hover {
+      transform: scale(1.03);
+    }
 
-    /* ---------- footer ---------- */
-    footer{background:#222;color:#ddd;padding:28px 16px;margin-top:28px}
-    footer .container{display:flex;flex-direction:column;gap:18px}
-    footer .brand{display:flex;gap:12px;align-items:center}
-    footer .brand img{width:56px;height:56px;border-radius:50%}
-    footer .links{display:flex;gap:16px;flex-wrap:wrap}
-    footer small{color:#999;margin-top:8px}
+    footer {
+      background-color: #ffe082;
+      padding: 20px;
+      font-size: 18px;
+    }
 
-    /* helpers */
-    .icon-circle{width:44px;height:44px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center}
-    .social-circle{display:flex;gap:10px}
+    footer a {
+      margin: 0 10px;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ========== TOPO ========== -->
-  <header class="topbar">
-    <div class="logo" title="Logo">
-      <!-- COLE AQUI O LINK DO LOGO -->
-      <img src="COLE_AQUI_LINK_IMAGEM_LOGO" alt="Logo Lala">
-    </div>
-
-    <div>
-      <div class="site-title">Lala Excursões</div>
-      <div class="site-sub">Sua próxima aventura começa aqui</div>
-    </div>
-
-    <div class="top-actions">
-      <!-- COLE AQUI O NÚMERO DO WHATSAPP: exemplo "5581984570287" (55 + DDD + número) -->
-      <a class="btn btn-wh" id="whatsBtn" href="https://wa.me/COLE_AQUI_NUMERO_WHATSAPP" target="_blank" rel="noopener">
-        <!-- ícone simples do WhatsApp -->
-        <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0012 .5 11.9 11.9 0 003.5 3.5 11.9 11.9 0 00.5 12c0 2.1.55 4.13 1.6 5.92L.5 23.5l5.73-1.51A11.9 11.9 0 0012 23.5c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.5-8zM12 21c-1.9 0-3.7-.5-5.3-1.4l-.4-.22-3.4.9.9-3.3-.23-.43A9 9 0 113 12 9 9 0 0112 21zm4.6-6.7c-.2-.1-1.2-.6-1.4-.7s-.4-.1-.6.1c-.2.2-.7.7-.8.9-.1.2-.3.2-.6.1-.9-.3-3.1-1.8-3.9-3.2-.3-.6.3-.5.8-1 .8-.7.6-1.1.5-1.2-.1-.1-.6-.1-1-.1s-1 .1-1.5.8c-.5.8-1.7 1.6-1.7 3.8s1.7 4.4 3.9 5.5c2.2 1.1 3.7 1 4.9.8 1.2-.2 3.5-1.4 4-2.8.4-1.4.4-2.6.3-2.8-.1-.2-.4-.3-.8-.5z"/></svg>
-        WhatsApp
-      </a>
-
-      <!-- COLE AQUI O LINK DO INSTAGRAM, exemplo "https://instagram.com/lala_excursões" -->
-      <a class="btn btn-ig" id="igBtn" href="COLE_AQUI_LINK_INSTAGRAM" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.7A4.3 4.3 0 1016.3 13 4.31 4.31 0 0012 8.7zm6.2-2.7a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z"/></svg>
-        Instagram
-      </a>
-    </div>
+  <header>
+    <img src="logo.jpg" alt="Logo Lala Excursões">
+    <h1>Lala Excursões</h1>
+    <p>Viagens inesquecíveis com conforto e segurança</p>
   </header>
 
-  <!-- ========== HERO / BANNER ========== -->
-  <section class="hero">
-    <!-- COLE AQUI LINK DA IMAGEM DO BANNER -->
-    <div class="bg" id="heroBg" style="background-image:url('COLE_AQUI_LINK_IMAGEM_BANNER')"></div>
-    <div class="content">
-      <h1>Descubra as Belezas de Piranhas - AL</h1>
-      <p>Experiências inesquecíveis no coração do Velho Chico</p>
-      <a href="https://wa.me/COLE_AQUI_NUMERO_WHATSAPP" class="cta" target="_blank" rel="noopener">
-        Reserve Agora
-      </a>
-    </div>
+  <section class="galeria">
+    <img src="imagem1.jpg" alt="Excursão 1">
+    <img src="imagem2.jpg" alt="Excursão 2">
+    <img src="imagem3.jpg" alt="Excursão 3">
+    <img src="imagem4.jpg" alt="Excursão 4">
+    <img src="imagem5.jpg" alt="Excursão 5">
+    <img src="imagem6.jpg" alt="Excursão 6">
+    <img src="imagem7.jpg" alt="Excursão 7">
+    <img src="imagem8.jpg" alt="Excursão 8">
+    <img src="imagem9.jpg" alt="Excursão 9">
+    <img src="imagem10.jpg" alt="Excursão 10">
   </section>
 
-  <!-- ========== NOSSOS PACOTES ========== -->
-  <section class="section">
-    <div class="container">
-      <h2>Nossos Pacotes</h2>
-      <p class="lead">Escolha sua próxima aventura</p>
-
-      <div class="cards">
-        <!-- CARD 1 (ex: Piranhas) -->
-        <article class="card">
-          <!-- COLE AQUI LINK DA IMAGEM DO PACOTE 1 -->
-          <div class="thumb" style="background-image:url('COLE_AQUI_LINK_IMAGEM_PACOTE1')"></div>
-          <div class="body">
-            <h3>Piranhas - AL</h3>
-            <p>Dois dias e uma noite de pura aventura</p>
-            <ul class="list">
-              <li>Transporte</li>
-              <li>Hotel</li>
-              <li>Café da manhã + Piscina</li>
-              <li>City Tour + Guia Local</li>
-              <li>Passeio de Catamarã</li>
-              <li>Forró de Piranhas</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn-outline" href="mailto:contato@exemplo.com">Solicitar Orçamento</a>
-              <a class="btn-outline" href="https://wa.me/COLE_AQUI_NUMERO_WHATSAPP" target="_blank">WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 2 (ex: Catamarã) -->
-        <article class="card">
-          <!-- COLE AQUI LINK DA IMAGEM DO PACOTE 2 -->
-          <div class="thumb" style="background-image:url('COLE_AQUI_LINK_IMAGEM_PACOTE2')"></div>
-          <div class="body">
-            <h3>Catamarã no Rio São Francisco</h3>
-            <p>Passeio pelos cânions e águas cristalinas</p>
-            <ul class="list">
-              <li>Passeio de catamarã</li>
-              <li>Guia local</li>
-              <li>Lanchinho incluso</li>
-            </ul>
-            <div class="btn-row">
-              <a class="btn-outline" href="mailto:contato@exemplo.com">Solicitar Orçamento</a>
-              <a class="btn-outline" href="https://wa.me/COLE_AQUI_NUMERO_WHATSAPP" target="_blank">WhatsApp</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Você pode duplicar mais cards seguindo o mesmo padrão -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
   <footer>
-    <div class="container">
-      <div class="brand">
-        <img src="COLE_AQUI_LINK_IMAGEM_LOGO" alt="Logo">
-        <div>
-          <strong>Lala Excursões</strong>
-          <div style="color:#aaa;font-size:14px">Transformando sonhos em experiências reais</div>
-        </div>
-      </div>
-
-      <div class="links">
-        <div>
-          <div style="font-weight:700;margin-bottom:6px">Contato</div>
-          <div style="color:#ccc">Telefone: (81) 98457-0287</div>
-          <div style="color:#ccc">Instagram: @lala_excurssoes</div>
-        </div>
-
-        <div style="margin-left:auto;display:flex;align-items:center;gap:12px">
-          <a class="icon-circle" href="https://wa.me/COLE_AQUI_NUMERO_WHATSAPP" target="_blank" rel="noopener" style="background:#25D366">
-            <!-- ícone reduzido whatsapp -->
-            <svg viewBox="0 0 24 24" fill="#fff" width="20" height="20"><path d="M20.5 3.5A11.9 11.9 0 0012 .5 11.9 11.9 0 003.5 3.5 11.9 11.9 0 00.5 12c0 2.1.55 4.13 1.6 5.92L.5 23.5l5.73-1.51A11.9 11.9 0 0012 23.5c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.5-8zM12 21c-1.9 0-3.7-.5-5.3-1.4l-.4-.22-3.4.9.9-3.3-.23-.43A9 9 0 113 12 9 9 0 0112 21z"/></svg>
-          </a>
-          <a class="icon-circle" href="COLE_AQUI_LINK_INSTAGRAM" target="_blank" rel="noopener" style="background:linear-gradient(90deg,#f58529,#dd2a7b,#8134af)">
-            <svg viewBox="0 0 24 24" fill="#fff" width="20" height="20"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.7A4.3 4.3 0 1016.3 13 4.31 4.31 0 0012 8.7zm6.2-2.7a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <small>© 2025 Lala Excursões. Todos os direitos reservados.</small>
-    </div>
+    <a href="https://wa.me/5581984570287" target="_blank">WhatsApp</a> |
+    <a href="https://instagram.com/lala_excursoes" target="_blank">Instagram</a>
   </footer>
-
-  <script>
-    /* ---- DICA: se você quiser, no futuro pode mudar as imagens sem editar o HTML
-       usando JavaScript para atualizar os estilos. Exemplo abaixo já pronto: */
-    (function(){
-      // Se quiser atualizar via JS, edite aqui os links:
-      const heroLink = 'COLE_AQUI_LINK_IMAGEM_BANNER';
-      // const pac1 = 'COLE_AQUI_LINK_IMAGEM_PACOTE1'; // se quiser usar JS, coloque o link real
-      // document.getElementById('heroBg').style.backgroundImage = `url('${heroLink}')`;
-      // Observação: por enquanto o HTML já carrega a imagem direto no atributo style.
-    })();
-  </script>
 
 </body>
 </html>
